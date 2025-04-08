@@ -118,10 +118,10 @@ body {
       color: #63636c;
       font-size: 1rem;
       text-align: center;
-      max-width: 580px;
+      max-width: auto;
       width: 100%;
       color: var(--Text-Primary-Enabled, #63636C);
-      font-size: 16px;
+      font-size: 14px;
       font-style: normal;
       line-height: 22px;
       /* 137.5% */
@@ -182,16 +182,8 @@ box-shadow: 0px 16px 16px 0px rgba(0, 0, 0, 0.05), 0px 8px 8px 0px rgba(0, 0, 0,
 }
 
 .social-card img {
-      width: 55.09px;
-      height: 55.09px;
-      object-fit: cover;
-      margin: -3.55px;
-      transform: rotate(15deg);
-      transition: transform 0.3s ease;
-}
-
-.social-card:hover img {
-      transform: rotate(0deg);
+      width: 40px; /* Adjust the size as needed */
+      height: auto; /* Maintain aspect ratio */
 }
 
 .content {
@@ -307,7 +299,7 @@ box-shadow: 0px 16px 16px 0px rgba(0, 0, 0, 0.05), 0px 8px 8px 0px rgba(0, 0, 0,
       }
 
       .social-card {
-            background: #1a1a1f;
+            background: #ffffff00;
       }
 
       .content p {
