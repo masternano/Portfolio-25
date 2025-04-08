@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Samuel Nnabude || Senior Product Designer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio of Samuel Nnabude - Designer and Developer with 10+ years of experience in digital products, design systems, web interfaces and data visualization." />
+    <link href="styles.css" rel="stylesheet" />
+    <link href="img/favicon.png" rel="shortcut icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <main class="container">
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="#" class="nav-link active">Home</a></li>
+          <li><a href="#" class="nav-link">Works</a></li>
+          <li><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="main-content">
+        <div class="profile-section">
+          <div class="avatar">
+            <img src="/img/image.png" alt="Profile picture of Samuel Nnabude" loading="lazy" />
+          </div>
+          <div class="timestamp" id="timestamp"></div>
+        </div>
+
+
+        <div class="content">
+          <h1>
+            Hi, my name is <span class="lightworks">Samuel Nnabude</span>. I design digital products,
+            design systems, develop web interfaces and visualize data.
+
+            In the last 10+ years, I've worked on a variety of projects in
+            governance, web 3, security, agriculture, finance, e-commerce,
+            transport and health.
+
+            My process is one of curiosity, a growth mindset and strategic
+            approach. My skills and experiences as a designer/developer gives me
+            unique perspective into creating user designs and experience.
+          </h1>
+        </div>
+      </div>
+    </main>
+
+    <div class="social-section">
+      <h3 class="social-title">Keep up with my #wips</h3>
+      <div class="social-icons">
+        <a href="https://dribbble.com" class="social-card" target="_blank" rel="noopener noreferrer">
+          <img src="/img/dribbble.png" alt="Dribbble profile" loading="lazy" />
+        </a>
+        <a href="#" class="social-card">
+          <img src="/img/layers.png" alt="Social media platform 1" loading="lazy" />
+        </a>
+        <a href="#" class="social-card">
+          <img src="/img/behance.png" alt="Social media platform 2" loading="lazy" />
+        </a>
+        <a href="#" class="social-card">
+          <img src="/img/codepen.png" alt="Social media platform 3" loading="lazy" />
+        </a>
+        <a href="#" class="social-card">
+          <img src="/img/linkedin.png" alt="Social media platform 4" loading="lazy" />
+        </a>
+      </div>
+    </div>
+
+    <script>
+      function updateTimestamp() {
+        const now = new Date();
+        const options = { 
+          day: '2-digit',
+          month: 'short',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false,
+          timeZoneName: 'short'
+        };
+        const formatter = new Intl.DateTimeFormat('en-US', options);
+        const parts = formatter.formatToParts(now);
+        
+        const day = parts.find(p => p.type === 'day').value;
+        const month = parts.find(p => p.type === 'month').value;
+        const time = `${parts.find(p => p.type === 'hour').value}:${parts.find(p => p.type === 'minute').value}:${parts.find(p => p.type === 'second').value}`;
+        const timezone = parts.find(p => p.type === 'timeZoneName').value;
+        
+        document.getElementById('timestamp').textContent = 
+          `${day} ${month} ✹ ${time} (${timezone}) ✹ ABJ (NG)`;
+      }
+
+      // Update timestamp immediately and then every second
+      updateTimestamp();
+      setInterval(updateTimestamp, 1000);
+
+      // Handle navigation clicks
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        });
+      });
+    </script>
+  </body>
+</html>
