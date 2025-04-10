@@ -206,8 +206,8 @@ body {
       font-style: normal;
       line-height: 24px;
       letter-spacing: 0.06px;
-      text-align: left;
-      max-width: 80%;
+      text-align: justify;
+      max-width: 65%;
 }
 
 /* .content h1 span {
@@ -321,6 +321,7 @@ body {
   background: linear-gradient(90deg, #ff7eb3, #ff758c, #ff6a5e, #ff7eb3);
   background-size: 300% 300%;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradient-animation 3s ease infinite;
 }
