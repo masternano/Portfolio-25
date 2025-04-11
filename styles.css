@@ -21,41 +21,51 @@ body {
 
 .nav {
       position: fixed;
-      bottom: 3rem;
+      bottom: 2rem;
+      /* Adjusted to move it further down */
+      left: 50%;
+      transform: translateX(-50%);
       z-index: 10;
       background: #f0f0f0;
       padding: 1.25rem 1.5rem;
       border-radius: 999px;
       border: 1.5px solid #f0f0f3;
       box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
+      transition: all 0.3s ease;
+      /* Smooth transition for hover effects */
 }
 
 @media (max-width: 768px) {
       .nav {
-            bottom: 1.5rem;
+            bottom: 1rem;
+            /* Adjust for smaller screens */
             padding: 1rem;
       }
 }
 
 .nav:hover {
-      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      /* Add a subtle shadow on hover */
+      transform: translateX(-50%) scale(1.02);
+      /* Slightly scale up on hover */
 }
 
 .nav-list {
       display: flex;
-      gap: 1.5rem;
+      gap: 2rem;
       list-style: none;
+      margin: 0;
+      padding: 0;
 }
 
 .nav-link {
-      font-family: "SF Pro Rounded", system-ui, sans-serif;
-      font-weight: 800;
-      font-size: 1rem;
-      color: #babbc5;
+      font-family: "SF Pro Rounded";
+      font-weight: 700;
+      font-size: 16px;
+      color: #8b8b93;
       text-decoration: none;
-      cursor: pointer;
-      transition: color 0.2s ease;
+      transition: color 0.3s ease;
+      /* Smooth color transition */
 }
 
 .nav-link:hover {
@@ -64,6 +74,8 @@ body {
 
 .nav-link.active {
       color: #121217;
+      font-weight: 700;
+      /* Make the active link bold */
 }
 
 .main-content {
@@ -121,7 +133,7 @@ body {
       max-width: auto;
       width: 100%;
       color: var(--Text-Primary-Enabled, #63636C);
-      font-size: 14px;
+      font-size: 12px;
       font-style: normal;
       line-height: 22px;
       /* 137.5% */
@@ -182,9 +194,12 @@ body {
 }
 
 .social-card img {
-      width: 48px; /* Set width to 48px */
-      height: 48px; /* Set height to 48px */
-      object-fit: cover; /* Ensure the image fits within the dimensions */
+      width: 48px;
+      /* Set width to 48px */
+      height: 48px;
+      /* Set height to 48px */
+      object-fit: cover;
+      /* Ensure the image fits within the dimensions */
 }
 
 .content {
@@ -202,7 +217,7 @@ body {
       font-weight: 700;
       color: var(--Text-Primary-Active, #121217);
       font-family: "SF Pro Rounded";
-      font-size: 16px;
+      font-size: 14px;
       font-style: normal;
       line-height: 24px;
       letter-spacing: 0.06px;
@@ -318,22 +333,187 @@ body {
 }
 
 .lightworks {
-  background: linear-gradient(90deg, #ff7eb3, #ff758c, #ff6a5e, #ff7eb3);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradient-animation 3s ease infinite;
+      background: linear-gradient(90deg, #ff7eb3, #ff758c, #ff6a5e, #ff7eb3);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradient-animation 3s ease infinite;
 }
 
 @keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+      0% {
+            background-position: 0% 50%;
+      }
+
+      50% {
+            background-position: 100% 50%;
+      }
+
+      100% {
+            background-position: 0% 50%;
+      }
+}
+
+.main-work {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      min-height: 100vh;
+      padding: 2.5rem 1rem;
+}
+
+.container-work {
+      width: 100%;
+      max-width: 1440px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+
+/* Hero Section */
+.hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 9rem;
+      padding: 0 1rem;
+      text-align: center;
+}
+
+.hero h1 {
+      max-width: 580px;
+      font-weight: 800;
+      font-size: 40px;
+      line-height: 48px;
+      letter-spacing: 0.8px;
+      color: #121217;
+}
+
+.hero p {
+      max-width: 580px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 26px;
+      letter-spacing: 0.4px;
+      color: #63636C;
+}
+
+/* Projects Section */
+.projects {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      margin-top: 9rem;
+      padding: 0 1rem 6rem 1rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+}
+
+.project-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+}
+
+.project-card.rotate-left {
+      transform: rotate(-3deg);
+}
+
+.project-card.rotate-right {
+      transform: rotate(3deg);
+}
+
+.card {
+      width: 288px;
+      height: 208px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 4px solid #f9f9fb;
+      box-shadow: 0px 0px 0px 1px #0000000d,
+            0px 1px 1px #0000000d,
+            0px 2px 2px #0000000d,
+            0px 4px 4px #0000000d,
+            0px 16px 16px #0000000d;
+      position: relative;
+}
+
+.card-content {
+      position: relative;
+      width: 100%;
+      height: 100%;
+}
+
+.project-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+}
+
+.project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+}
+
+.project-title {
+      width: 280px;
+      font-weight: 700;
+      color: #63636C;
+      font-size: 16px;
+      line-height: 22px;
+      text-align: center;
+}
+
+/* Navigation */
+/* .navigation {
+    position: fixed;
+    bottom: 6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background-color: #fafafa;
+    border-radius: 999px;
+    border: 1.5px solid #f0f0f3;
+    box-shadow: 0px 0px 0px 1px #0000000d;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 22px;
+    color: #babbc5;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.nav-button.active {
+    color: #121217;
+} */
+
+@media (max-width: 768px) {
+      .hero h1 {
+            font-size: 32px;
+            line-height: 40px;
+      }
+
+      .hero p {
+            font-size: 18px;
+            line-height: 24px;
+      }
+
+      .projects {
+            margin-top: 6rem;
+      }
 }
