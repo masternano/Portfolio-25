@@ -9,9 +9,9 @@
     content="Portfolio of Samuel Nnabude - Designer and Developer with 10+ years of experience in digital products, design systems, web interfaces and data visualization." />
   <link href="styles.css" rel="stylesheet" />
   <link href="img/favicon.png" rel="shortcut icon" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap" rel="stylesheet" />
 </head>
 
 <body>
@@ -30,13 +30,14 @@
           build design systems, develop web interfaces and visualize data.
         </h1>
         <h1>
-          In the last 8+ years, I've crafted 🎨 digital experiences that turned 🧭 complexity & chaos into intuitive patterns 🧩. 
+          In the last 8+ years, I've crafted 🎨 digital experiences that turned 🧭 complexity & chaos into intuitive patterns 🧩.
         </h1>
         <h1>
-          My skills and experiences as a designer/developer gives me unique perspective into crafting unique user experiences.
+          My skills and experiences as a designer/developer give me a unique perspective into crafting unique user experiences.
         </h1>
       </div>
     </div>
+
     <nav class="nav">
       <ul class="nav-list">
         <li><a href="/index.html" class="nav-link active">Home</a></li>
@@ -76,8 +77,7 @@
 
     // Handle navigation clicks
     document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', (e) => {
-        // Remove e.preventDefault() to allow navigation
+      link.addEventListener('click', () => {
         document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
         link.classList.add('active');
       });
