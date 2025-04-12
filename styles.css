@@ -5,9 +5,21 @@
 }
 
 body {
-      font-family: "SF Pro Rounded";
-      background: white;
-      min-height: 100vh;
+/* Remove or comment out the existing 'background: white;' rule */
+  /* background: white; */
+
+  font-family: "SF Pro Rounded"; /* Keep existing font */
+  min-height: 100vh; /* Keep this - ensures body takes full viewport height */
+
+  /* Add these properties for the background image: */
+  background-image: url("/img/background.jpg"); /* <-- Replace with the correct path to your image */
+  background-size: cover; /* Scales the image to cover the entire background area */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Optional: Keeps the background fixed when scrolling */
+
+  /* You might need to adjust text colors if they clash with the background */
+  /* color: #some-color; */
 }
 
 .container {
@@ -144,6 +156,7 @@ body {
       flex-direction: column;
       align-items: center;
       gap: 1.5rem;
+      margin: 5%;
 }
 
 .social-title {
@@ -378,7 +391,7 @@ body {
       flex-direction: column;
       align-items: center;
       gap: 0.5rem;
-      margin-top: 9rem;
+      margin: 9rem 0rem 3rem 0rem;
       padding: 0 1rem;
       text-align: center;
 }
@@ -516,4 +529,66 @@ body {
       .projects {
             margin-top: 6rem;
       }
+}
+
+
+.email-form {
+      display: flex;
+      align-items: center;
+      border: 2px solid #eee;
+      border-radius: 30px;
+      overflow: hidden;
+      max-width: 350px;
+      width: 100%;
+      background: #f9f9f9;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.email-form input {
+      flex: 1;
+      padding: 18px 18px;
+      border: none;
+      background: transparent;
+      outline: none;
+      font-weight: bold;
+      color: #333;
+      border-radius: var(--Radius-7XL, 999px) var(--Radius-3XS, 0px) var(--Radius-3XS, 0px) var(--Radius-7XL, 999px);
+      border-top: var(--Width-M, 1.5px) solid var(--Border-Tertiary, #E8E8EC);
+      border-right: var(--Width-XS, 0px) solid var(--Border-Tertiary, #E8E8EC);
+      border-bottom: var(--Width-M, 1.5px) solid var(--Border-Tertiary, #E8E8EC);
+      border-left: var(--Width-M, 1.5px) solid var(--Border-Tertiary, #E8E8EC);
+      background: var(--Background-Secondary, #FAFAFA);
+      color: var(--Text-Primary-Enabled, #63636C);
+      text-align: center;
+      font-family: "SF Pro Rounded";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 20px;
+      /* 142.857% */
+}
+
+.email-form button {
+      padding: 18px 18px;
+      background: #fff;
+      border-left: 2px solid #eee;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+      border-radius: var(--Radius-3XS, 0px) var(--Radius-7XL, 999px) var(--Radius-7XL, 999px) var(--Radius-3XS, 0px);
+      border: var(--Width-M, 1.5px) solid var(--Border-Tertiary, #E8E8EC);
+      background: var(--Background-Primary, #FFF);
+      color: var(--Text-Primary-Active, #121217);
+      text-align: center;
+      font-family: "SF Pro Rounded";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 20px;
+      /* 142.857% */
+}
+
+.email-form button:hover {
+      background: #f0f0f0;
 }
