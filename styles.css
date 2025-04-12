@@ -5,21 +5,13 @@
 }
 
 body {
-/* Remove or comment out the existing 'background: white;' rule */
-  /* background: white; */
-
-  font-family: "SF Pro Rounded"; /* Keep existing font */
-  min-height: 100vh; /* Keep this - ensures body takes full viewport height */
-
-  /* Add these properties for the background image: */
-  background-image: url("/img/background.jpg"); /* <-- Replace with the correct path to your image */
-  background-size: cover; /* Scales the image to cover the entire background area */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  background-attachment: fixed; /* Optional: Keeps the background fixed when scrolling */
-
-  /* You might need to adjust text colors if they clash with the background */
-  /* color: #some-color; */
+      font-family: "SF Pro Rounded";
+      min-height: 100vh;
+      background-image: url("/img/background.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
 }
 
 .container {
@@ -34,7 +26,6 @@ body {
 .nav {
       position: fixed;
       bottom: 2rem;
-      /* Adjusted to move it further down */
       left: 50%;
       transform: translateX(-50%);
       z-index: 10;
@@ -44,22 +35,18 @@ body {
       border: 1.5px solid #f0f0f3;
       box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
       transition: all 0.3s ease;
-      /* Smooth transition for hover effects */
 }
 
 @media (max-width: 768px) {
       .nav {
             bottom: 1rem;
-            /* Adjust for smaller screens */
             padding: 1rem;
       }
 }
 
 .nav:hover {
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      /* Add a subtle shadow on hover */
       transform: translateX(-50%) scale(1.02);
-      /* Slightly scale up on hover */
 }
 
 .nav-list {
@@ -77,17 +64,11 @@ body {
       color: #8b8b93;
       text-decoration: none;
       transition: color 0.3s ease;
-      /* Smooth color transition */
 }
 
-.nav-link:hover {
-      color: #121217;
-}
-
+.nav-link:hover,
 .nav-link.active {
       color: #121217;
-      font-weight: 700;
-      /* Make the active link bold */
 }
 
 .main-content {
@@ -139,16 +120,10 @@ body {
 .timestamp {
       font-family: "DM Mono", monospace;
       font-weight: 500;
-      color: #63636c;
-      font-size: 1rem;
-      text-align: center;
-      max-width: auto;
-      width: 100%;
       color: var(--Text-Primary-Enabled, #63636C);
       font-size: 12px;
-      font-style: normal;
       line-height: 22px;
-      /* 137.5% */
+      text-align: center;
 }
 
 .social-section {
@@ -180,18 +155,15 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #f0f0f0;
-      border-radius: 0.5rem;
-      overflow: hidden;
-      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05),
-            0 1px 1px rgba(0, 0, 0, 0.05),
-            0 2px 2px rgba(0, 0, 0, 0.05),
-            0 4px 4px rgba(0, 0, 0, 0.05),
-            0 16px 16px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
-      border-radius: var(--Radius-S, 8px);
       background: var(--Complimentary, #F0F0F0);
-      box-shadow: 0px 16px 16px 0px rgba(0, 0, 0, 0.05), 0px 8px 8px 0px rgba(0, 0, 0, 0.00), 0px 4px 4px 0px rgba(0, 0, 0, 0.05), 0px 2px 2px 0px rgba(0, 0, 0, 0.05), 0px 1px 1px 0px rgba(0, 0, 0, 0.05), 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
+      border-radius: var(--Radius-S, 8px);
+      box-shadow: 0px 16px 16px rgba(0, 0, 0, 0.05),
+            0px 8px 8px rgba(0, 0, 0, 0.05),
+            0px 4px 4px rgba(0, 0, 0, 0.05),
+            0px 2px 2px rgba(0, 0, 0, 0.05),
+            0px 1px 1px rgba(0, 0, 0, 0.05),
+            0px 0px 0px 1px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
 }
 
 .social-card:nth-child(odd) {
@@ -208,11 +180,8 @@ body {
 
 .social-card img {
       width: 48px;
-      /* Set width to 48px */
       height: 48px;
-      /* Set height to 48px */
       object-fit: cover;
-      /* Ensure the image fits within the dimensions */
 }
 
 .content {
@@ -231,42 +200,11 @@ body {
       color: var(--Text-Primary-Active, #121217);
       font-family: "SF Pro Rounded";
       font-size: 14px;
-      font-style: normal;
       line-height: 24px;
       letter-spacing: 0.06px;
       text-align: justify;
       max-width: 65%;
 }
-
-/* .content h1 span {
-      color: #ec4899;
-      position: relative;
-      display: inline-block;
-}
-
-.content h1 span::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      bottom: -2px;
-      left: 0;
-      transform: scaleX(0);
-      transform-origin: bottom right;
-      transition: transform 0.3s ease;
-}
-
-.content h1 span:hover::after {
-      transform: scaleX(1);
-      transform-origin: bottom left;
-} */
-
-/* .content p {
-      color: #63636c;
-      font-size: 1rem;
-      line-height: 1.5;
-      opacity: 0.9;
-} */
 
 @media (max-width: 640px) {
       .container {
@@ -304,12 +242,8 @@ body {
       }
 
       .nav {
-            border-radius: var(--Radius-7XL, 999px);
-            border: var(--Width-M, 1.5px) solid var(--Border-Secondary, #F0F0F3);
             background: var(--Background-Secondary, #FAFAFA);
-            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
-            /* background: #1a1a1f;
-          border-color: #2a2a2f; */
+            border: var(--Width-M, 1.5px) solid var(--Border-Secondary, #F0F0F3);
       }
 
       .nav-link {
@@ -319,13 +253,7 @@ body {
       .nav-link.active,
       .nav-link:hover {
             color: var(--Text-Primary-Active, #121217);
-            text-align: center;
-            font-family: "SF Pro Rounded";
-            font-size: 16px;
-            font-style: normal;
             font-weight: 800;
-            line-height: 24px;
-            /* 137.5% */
       }
 
       .social-card {
@@ -336,10 +264,7 @@ body {
             color: #8b8b93;
       }
 
-      .timestamp {
-            color: #8b8b93;
-      }
-
+      .timestamp,
       .social-title {
             color: #8b8b93;
       }
@@ -484,37 +409,6 @@ body {
       text-align: center;
 }
 
-/* Navigation */
-/* .navigation {
-    position: fixed;
-    bottom: 6rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: inline-flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.25rem 1.5rem;
-    background-color: #fafafa;
-    border-radius: 999px;
-    border: 1.5px solid #f0f0f3;
-    box-shadow: 0px 0px 0px 1px #0000000d;
-}
-
-.nav-button {
-    background: none;
-    border: none;
-    font-weight: 800;
-    font-size: 16px;
-    line-height: 22px;
-    color: #babbc5;
-    cursor: pointer;
-    white-space: nowrap;
-}
-
-.nav-button.active {
-    color: #121217;
-} */
-
 @media (max-width: 768px) {
       .hero h1 {
             font-size: 32px;
@@ -530,7 +424,6 @@ body {
             margin-top: 6rem;
       }
 }
-
 
 .email-form {
       display: flex;
@@ -565,7 +458,6 @@ body {
       font-style: normal;
       font-weight: 800;
       line-height: 20px;
-      /* 142.857% */
 }
 
 .email-form button {
@@ -586,7 +478,6 @@ body {
       font-style: normal;
       font-weight: 800;
       line-height: 20px;
-      /* 142.857% */
 }
 
 .email-form button:hover {
