@@ -179,9 +179,10 @@ body {
 }
 
 .social-card img {
-      width: 48px;
-      height: 48px;
+      width: 40px;
+      height: 40px;
       object-fit: cover;
+      border-radius: 4px;
 }
 
 .content {
