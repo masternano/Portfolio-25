@@ -56,4 +56,18 @@ const projectCards = [
               button.classList.add('active');
           });
       });
+
+      const worksLink = document.getElementById('works-link');
+      const worksModal = document.getElementById('works-modal');
+
+      worksLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        worksModal.style.display = worksModal.style.display === 'block' ? 'none' : 'block';
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!worksModal.contains(e.target) && e.target !== worksLink) {
+          worksModal.style.display = 'none';
+        }
+      });
   });

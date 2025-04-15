@@ -76,7 +76,7 @@ body {
       flex-direction: column;
       align-items: center;
       gap: 0.5rem;
-      margin-top: 9rem;
+      margin-top: 4rem;
 }
 
 .profile-section {
@@ -124,6 +124,7 @@ body {
       font-size: 12px;
       line-height: 22px;
       text-align: center;
+      max-width: 100%;
 }
 
 .social-section {
@@ -200,8 +201,8 @@ body {
       font-weight: 700;
       color: var(--Text-Primary-Active, #121217);
       font-family: "SF Pro Rounded";
-      font-size: 14px;
-      line-height: 24px;
+      font-size: 18px;
+      line-height: 26px;
       letter-spacing: 0.06px;
       text-align: justify;
       max-width: 65%;
@@ -238,7 +239,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
       body {
-            color: #ffffff;
+            color: var(--Text-Primary-Active, #121217);
             background: var(--Background-Primary, #FFF);
       }
 
@@ -368,17 +369,37 @@ body {
 }
 
 .card {
-      width: 288px;
-      height: 208px;
-      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* Ensures content is spaced between top and bottom */
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      border: 4px solid #f9f9fb;
-      box-shadow: 0px 0px 0px 1px #0000000d,
-            0px 1px 1px #0000000d,
-            0px 2px 2px #0000000d,
-            0px 4px 4px #0000000d,
-            0px 16px 16px #0000000d;
-      position: relative;
+      background-color: #fff;
+      max-width: 300px; /* Optional: Limits the width of each card */
+}
+
+.card-image {
+      width: 100%; /* Makes the image span the full width of the card */
+      height: 200px; /* Sets a fixed height for the image */
+      object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.card-content {
+      padding: 1rem;
+      text-align: center;
+      margin-top: auto; /* Pushes the content to the bottom of the card */
+}
+
+.card-content h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.5rem;
+}
+
+.card-content p {
+      margin: 0;
+      color: #666;
 }
 
 .card-content {
@@ -484,3 +505,98 @@ body {
 .email-form button:hover {
       background: #f0f0f0;
 }
+
+    
+    /* Projects grid */
+    .work-grid {
+      display: flex;
+      flex-direction: column; /* Arrange items vertically */
+      align-items: center; /* Center-align the cards */
+      gap: 20px; /* Add spacing between cards */
+      width: 100%; /* Ensure it spans the full width */
+      padding: 20px; /* Add padding for spacing */
+      box-sizing: border-box;
+    }
+    
+    /* Card styles */
+    .casestudy {
+      border-radius: 32px;
+      overflow: hidden;
+      border: 1.5px solid #f9f9fb;
+      background: transparent;
+    }
+    
+    .casestudy.large {
+      width: 580px;
+      height: 660px;
+    }
+    
+    .casestudy.small {
+      width: 580px;
+      height: 320px;
+      margin-bottom: 20px;
+    }
+    
+    .casestudy-content {
+      position: relative;
+      top: 8px;
+      left: 8px;
+      width: calc(100% - 16px);
+      height: calc(100% - 16px);
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+    
+    .project-image {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: 50% 50%;
+      position: relative;
+    }
+    
+    .gradient {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(115,115,115,1) 100%);
+    }
+    
+    .small .gradient {
+      background: linear-gradient(180deg, rgba(115,149,197,0) 0%, rgba(78,121,182,1) 100%);
+    }
+    
+    .project-info {
+      position: absolute;
+      bottom: 28px;
+      left: 28px;
+      width: calc(100% - 56px);
+    }
+    
+    .category {
+      font-family: "SF Pro Rounded", sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      color: white;
+      letter-spacing: 0.09px;
+      margin-bottom: 8px;
+    }
+    
+    .title {
+      font-family: "SF Pro Rounded", sans-serif;
+      font-weight: 500;
+      font-size: 28px;
+      color: white;
+      letter-spacing: 0.28px;
+      line-height: 34px;
+    }
+    
+    .small-projects {
+      display: flex;
+      flex-direction: column; /* Arrange small cards vertically */
+      gap: 20px; /* Add spacing between small cards */
+      width: 100%; /* Ensure it spans the full width */
+    }
