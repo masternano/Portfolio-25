@@ -47,9 +47,10 @@ style="background-image: url('/img/background.jpg'); background-size: cover; bac
     <!-- Tray for Works -->
     <div id="works-tray" class="tray hidden">
       <div class="tray-content">
-        <h2 style="font-size: 32px; margin: 2% 0% 5%; 0%">My Works</h2>
+        <h2 style="font-size: 32px; margin: 2% 0% 5% 0%">My works</h2>
         <div class="card-container">
           <div class="card">
+            <img src="/img/in.png" alt="Card 1 Image" class="card-image" />
             <h3 class="card-header">Card 1</h3>
             <p class="card-subheader">This is the sub-header for Card 1.</p>
           </div>
@@ -97,7 +98,7 @@ style="background-image: url('/img/background.jpg'); background-size: cover; bac
       const timezone = parts.find(p => p.type === 'timeZoneName').value;
 
       document.getElementById('timestamp').textContent =
-        `${day} ${month} ✹ ${time} (${timezone}) ✹ ABJ (NG)`;
+        `${day} ${month} ✹ ${time} (${timezone}) ✹ ABUJA (NG)`;
     }
 
     // Update timestamp immediately and then every second
