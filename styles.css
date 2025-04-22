@@ -369,15 +369,19 @@ body {
 }
 
 .card {
+      flex: none; /* Prevent cards from stretching */
+      background: #fff; /* White background */
+      border: 1px solid #ddd; /* Light border */
+      border-radius: 8px; /* Rounded corners */
+      padding: 20px;
+      /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */ /* Removed shadow */
+      text-align: center; /* Center-align text */
       display: flex;
-      flex-direction: column;
-      justify-content: space-between; /* Ensures content is spaced between top and bottom */
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      background-color: #fff;
-      max-width: 300px; /* Optional: Limits the width of each card */
+      flex-direction: column; /* Stack header and sub-header */
+      justify-content: center; /* Center content vertically */
+      height: 400px; /* Fixed height */
+      width: 380px; /* Fixed width */
+      margin: 0 auto; /* Center cards horizontally if needed */
 }
 
 .card-image {
@@ -600,3 +604,112 @@ body {
       gap: 20px; /* Add spacing between small cards */
       width: 100%; /* Ensure it spans the full width */
     }
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 999; /* Below the tray */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Tray */
+.tray {
+  position: fixed;
+  bottom: -80%; /* Start hidden below the viewport */
+  left: 0;
+  width: 100%; /* Full width of the viewport */
+  height: 80%; /* 80% of the viewport height */
+  background: #fff; /* Fully opaque white background */
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+  transition: bottom 0.3s ease-in-out;
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 20px;
+  border-top-left-radius: 24px; /* Rounded corners */
+  border-top-right-radius: 24px;
+}
+
+.tray.hidden {
+  bottom: -80%; /* Hidden state */
+}
+
+.tray.visible {
+  bottom: 0; /* Visible state */
+}
+
+/* Tray Content */
+.tray-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tray {
+    height: 90%; /* Adjust height for smaller screens */
+  }
+}
+
+/* Card Container */
+.card-container {
+  display: flex;
+  justify-content: center; /* Center cards horizontally */
+  align-items: stretch; /* Ensure equal height */
+  gap: 20px; /* Add spacing between cards */
+  margin: 20px 0; /* Add margin around the container */
+}
+
+/* Card */
+.card {
+  flex: none; /* Prevent cards from stretching */
+  background: #fff; /* White background */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */ /* Removed shadow */
+  text-align: center; /* Center-align text */
+  display: flex;
+  flex-direction: column; /* Stack header and sub-header */
+  justify-content: center; /* Center content vertically */
+  height: 400px; /* Fixed height */
+  width: 380px; /* Fixed width */
+  margin: 0 auto; /* Center cards horizontally if needed */
+}
+
+/* Card Header */
+.card-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Card Sub-header */
+.card-subheader {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+    gap: 15px; /* Adjust spacing */
+  }
+}

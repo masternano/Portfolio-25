@@ -41,11 +41,35 @@ style="background-image: url('/img/background.jpg'); background-size: cover; bac
       </div>
     </div>
 
+    <!-- Overlay -->
+    <div id="overlay" class="overlay hidden"></div>
+    
+    <!-- Tray for Works -->
+    <div id="works-tray" class="tray hidden">
+      <div class="tray-content">
+        <h2 style="font-size: 32px; margin: 2% 0% 5%; 0%">My Works</h2>
+        <div class="card-container">
+          <div class="card">
+            <h3 class="card-header">Card 1</h3>
+            <p class="card-subheader">This is the sub-header for Card 1.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-header">Card 2</h3>
+            <p class="card-subheader">This is the sub-header for Card 2.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-header">Card 3</h3>
+            <p class="card-subheader">This is the sub-header for Card 3.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <nav class="nav">
       <ul class="nav-list">
         <li><a href="/index.html" class="nav-link active">Home</a></li>
         <li>
-          <a href="/work.html" class="nav-link">Works</a>
+          <a href="/work.html" class="nav-link" id="works-link">Works</a>
         </li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
@@ -86,6 +110,43 @@ style="background-image: url('/img/background.jpg'); background-size: cover; bac
         document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
         link.classList.add('active');
       });
+    });
+
+    // Handle tray toggle for "Works" menu
+    const worksLink = document.getElementById('works-link');
+    const worksTray = document.getElementById('works-tray');
+    const overlay = document.getElementById('overlay');
+
+    // Function to open the tray
+    function openTray() {
+      worksTray.classList.remove('hidden');
+      worksTray.classList.add('visible');
+      overlay.classList.remove('hidden');
+      overlay.classList.add('visible');
+    }
+
+    // Function to close the tray
+    function closeTray() {
+      worksTray.classList.remove('visible');
+      worksTray.classList.add('hidden');
+      overlay.classList.remove('visible');
+      overlay.classList.add('hidden');
+    }
+
+    // Open tray on "Works" link click
+    worksLink.addEventListener('click', (event) => {
+      event.preventDefault(); // Prevent default link behavior
+      openTray();
+    });
+
+    // Close tray on overlay click
+    overlay.addEventListener('click', closeTray);
+
+    // Close tray on Escape key press
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeTray();
+      }
     });
   </script>
 </body>
