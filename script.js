@@ -35,6 +35,7 @@ const projectCards = [
               <div class="card">
                   <div class="card-content">
                       <img class="project-image" src="${card.imageSrc}" alt="${card.title} image">
+                      <img class="project-overlay" src="${card.subtractSrc}" alt="">
                   </div>
               </div>
               <div class="project-title">${card.title}</div>
@@ -55,19 +56,5 @@ const projectCards = [
               navButtons.forEach(btn => btn.classList.remove('active'));
               button.classList.add('active');
           });
-      });
-
-      const worksLink = document.getElementById('works-link');
-      const worksModal = document.getElementById('works-modal');
-
-      worksLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        worksModal.style.display = worksModal.style.display === 'block' ? 'none' : 'block';
-      });
-
-      document.addEventListener('click', (e) => {
-        if (!worksModal.contains(e.target) && e.target !== worksLink) {
-          worksModal.style.display = 'none';
-        }
       });
   });
