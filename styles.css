@@ -369,57 +369,94 @@ body {
 }
 
 .card {
-  display: flex; /* Align image and content side by side */
-  flex-direction: row; /* Horizontal layout */
-  align-items: center; /* Align items vertically in the center */
-  width: 560px; /* Total width: 120px (image) + 440px (content) */
-  background: #fff;
-  border: none; /* Remove the border */
-  border-radius: 0; /* Remove rounded corners */
-  box-shadow: none; /* Remove the shadow */
-  margin: 10px auto; /* Center the card and add spacing */
-  overflow: hidden; /* Prevent content overflow */
-  margin-bottom: 24px;
+      display: flex;
+      /* Align image and content side by side */
+      flex-direction: row;
+      /* Horizontal layout */
+      align-items: center;
+      /* Align items vertically in the center */
+      width: 560px;
+      /* Total width: 120px (image) + 440px (content) */
+      background: #fff;
+      border: none;
+      /* Remove the border */
+      border-radius: 0;
+      /* Remove rounded corners */
+      box-shadow: none;
+      /* Remove the shadow */
+      margin: 10px auto;
+      /* Center the card and add spacing */
+      overflow: hidden;
+      /* Prevent content overflow */
+      /* margin-bottom: 24px; */
 }
 
 /* Card Container */
 .card-container {
-  display: flex; /* Enable Flexbox */
-  flex-direction: column; /* Stack cards vertically */
-  align-items: center; /* Center cards horizontally */
-  gap: 20px; /* Add spacing between the cards */
-  margin: 0 auto; /* Center the container itself */
+      display: flex;
+      /* Enable Flexbox */
+      flex-direction: column;
+      /* Stack cards vertically */
+      align-items: center;
+      /* Center cards horizontally */
+      gap: 20px;
+      /* Add spacing between the cards */
+      margin: 0 auto;
+      /* Center the container itself */
 }
 
 /* Card Image */
 .card-image {
-  width: 80px; /* Fixed width for the image */
-  height: 80px; /* Fixed height for the image */
-  object-fit: cover; /* Ensure the image covers the area without distortion */
-  border-radius: 12px; /* Rounded corners on the left */
+      width: 80px;
+      /* Fixed width for the image */
+      height: 80px;
+      /* Fixed height for the image */
+      object-fit: cover;
+      /* Ensure the image covers the area without distortion */
+      border-radius: 12px;
+      /* Rounded corners on the left */
 }
 
 /* Card Content */
 .card-content {
-  width: 440px; /* Fixed width for the content */
-  padding: 16px; /* Add padding around the content */
-  display: flex;
-  flex-direction: column; /* Stack header and subheader vertically */
-  justify-content: center; /* Center content vertically */
+      width: 440px;
+      /* Fixed width for the content */
+      padding: 16px;
+      /* Add padding around the content */
+      display: flex;
+      flex-direction: column;
+      /* Stack header and subheader vertically */
+      justify-content: center;
+      /* Center content vertically */
 }
 
 /* Card Header */
 .card-header {
-  font-size: 18px; /* Adjust font size */
-  font-weight: bold; /* Make the header bold */
-  margin: 0 0 8px 0; /* Add spacing below the header */
+      font-size: 16px;
+      /* Adjust font size */
+      font-weight: bold;
+      /* Make the header bold */
+      margin: 0 0 8px 0;
+      /* Add spacing below the header */
+      color: var(--Text-Primary-Pressed, #2B2B30);
+      font-style: normal;
+      font-weight: 600;
+      line-height: 26px;
+      /* 130% */
+      letter-spacing: 0.4px;
+      width: fit-content
 }
 
 /* Card Subheader */
 .card-subheader {
-  font-size: 14px; /* Adjust font size */
-  color: #666; /* Use a lighter color for the subheader */
-  margin: 0; /* Remove default margin */
+      font-size: 14px;
+      /* Adjust font size */
+      color: #666;
+      /* Use a lighter color for the subheader */
+      margin-bottom: 2px;
+      /* Remove default margin */
+      color: var(--Text-Primary-Disabled, #BABBC5);
+      line-height: 20px; /* 142.857% */
 }
 
 .project-image {
@@ -707,10 +744,14 @@ body {
       /* Rounded corners */
       border-top-right-radius: 24px;
       display: flex;
-padding: 1.875rem 8.125rem;
-flex-direction: column;
-align-items: flex-start;
-gap: 0.5rem;
+      padding: 1.875rem 8.125rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      position: fixed;
+      border: 1.5px solid #f0f0f3;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
 }
 
 .tray.hidden {
@@ -752,4 +793,3 @@ gap: 0.5rem;
       letter-spacing: 0.32px;
       text-align: center;
 }
-
