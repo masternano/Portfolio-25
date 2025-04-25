@@ -51,28 +51,142 @@
                         <input type="email" value="sc.nnabude@gmail.com" readonly />
                         <button type="submit">Send mail</button>
                   </form>
-
-
             </div>
-            <nav class="nav">
-                  <ul class="nav-list">
-                        <li><a href="/index.html" class="nav-link">Home</a></li>
-                        <li><a href="/work.html" class="nav-link">Works</a></li>
-                        <li><a href="/contact.html" class="nav-link active">Contact</a></li>
-                  </ul>
-            </nav>
+
+            <!-- Overlay -->
+            <div id="overlay" class="overlay hidden"></div>
+
+            <!-- Tray for Works -->
+            <div id="works-tray" class="tray hidden">
+                  <div class="tray-content">
+                        <div class="card-container">
+                              <h2 class="tray-header">My works</h2>
+                              <div class="card">
+                                    <img src="/img/in.png" alt="Card 1 Image" class="card-image" />
+                                    <div class="card-content">
+                                          <p class="card-subheader">Design system</p>
+                                          <h3 class="card-header">Crafting a user-centered blockchain web solution
+                                                focusing on trust, responsiveness and transparency</h3>
+                                    </div>
+                              </div>
+                              <div class="card">
+                                    <img src="/img/in.png" alt="Card 2 Image" class="card-image" />
+                                    <div class="card-content">
+                                          <p class="card-subheader">Design system</p>
+                                          <h3 class="card-header">Crafting a user-centered blockchain web solution
+                                                focusing on trust, responsiveness and transparency</h3>
+                                    </div>
+                              </div>
+                              <div class="card">
+                                    <img src="/img/in.png" alt="Card 3 Image" class="card-image" />
+                                    <div class="card-content">
+                                          <p class="card-subheader">Design system</p>
+                                          <h3 class="card-header">Crafting a user-centered blockchain web solution
+                                                focusing on trust, responsiveness and transparency</h3>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+            <!-- Overlay for works tray -->
+            <div id="overlay" class="overlay hidden"></div>
+
+            <!-- Tray for Works -->
+            <div id="works-tray" class="tray hidden">
+                  <div class="tray-content">
+                        <div class="card-container">
+                              <h2 class="tray-header">My works</h2>
+                              <div class="card">
+                                    <img src="/img/in.png" alt="Card 1 Image" class="card-image" />
+                                    <div class="card-content">
+                                          <p class="card-subheader">Design system</p>
+                                          <h3 class="card-header">Crafting a user-centered blockchain web solution
+                                                focusing on trust, responsiveness and transparency</h3>
+                                    </div>
+                              </div>
+                              <div class="card">
+                                    <img src="/img/in.png" alt="Card 2 Image" class="card-image" />
+                                    <div class="card-content">
+                                          <p class="card-subheader">Design system</p>
+                                          <h3 class="card-header">Crafting a user-centered blockchain web solution
+                                                focusing on trust, responsiveness and transparency</h3>
+                                    </div>
+                              </div>
+                              <div class="card">
+                                    <img src="/img/in.png" alt="Card 3 Image" class="card-image" />
+                                    <div class="card-content">
+                                          <p class="card-subheader">Design system</p>
+                                          <h3 class="card-header">Crafting a user-centered blockchain web solution
+                                                focusing on trust, responsiveness and transparency</h3>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+            <!-- Navigation Menu -->
+<nav class="nav">
+  <ul class="nav-list">
+    <li><a href="/index.html" class="nav-link">Home</a></li>
+    <li><a href="" class="nav-link" id="works-link">Works</a></li>
+    <li><a href="/contact.html" class="nav-link active">Contact</a></li>
+  </ul>
+</nav>
       </main>
 
       <script>
-            // Handle navigation clicks
-            document.querySelectorAll('.nav-link').forEach(link => {
-                  link.addEventListener('click', (e) => {
-                        // Remove e.preventDefault() to allow navigation
-                        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-                        link.classList.add('active');
-                  });
-            });
-      </script>
+  // Handle navigation clicks
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      // Remove e.preventDefault() to allow navigation
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+
+  // Handle tray toggle for "Works" menu
+  const worksLink = document.getElementById('works-link');
+  const worksTray = document.getElementById('works-tray');
+  const overlay = document.getElementById('overlay');
+  const contactLink = document.querySelector('.nav-link[href="/contact.html"]'); // Active page link
+
+  // Function to open the tray
+  function openTray() {
+    worksTray.classList.remove('hidden');
+    worksTray.classList.add('visible');
+    overlay.classList.remove('hidden');
+    overlay.classList.add('visible');
+  }
+
+  // Function to close the tray
+  function closeTray() {
+    worksTray.classList.remove('visible');
+    worksTray.classList.add('hidden');
+    overlay.classList.remove('visible');
+    overlay.classList.add('hidden');
+
+    // Restore the active page link
+    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+    contactLink.classList.add('active');
+  }
+
+  // Open tray on "Works" link click
+  worksLink.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default link behavior
+    openTray();
+  });
+
+  // Close tray on overlay click
+  overlay.addEventListener('click', closeTray);
+
+  // Close tray on Escape key press
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeTray();
+    }
+  });
+</script>
 </body>
 
 </html>

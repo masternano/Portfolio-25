@@ -86,36 +86,10 @@ style="background-image: url('/img/background.jpg'); background-size: cover; bac
   </main>
 
   <script>
-    function updateTimestamp() {
-      const now = new Date();
-      const options = {
-        day: '2-digit',
-        month: 'short',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false,
-        timeZoneName: 'short'
-      };
-      const formatter = new Intl.DateTimeFormat('en-US', options);
-      const parts = formatter.formatToParts(now);
-
-      const day = parts.find(p => p.type === 'day').value;
-      const month = parts.find(p => p.type === 'month').value;
-      const time = `${parts.find(p => p.type === 'hour').value}:${parts.find(p => p.type === 'minute').value}:${parts.find(p => p.type === 'second').value}`;
-      const timezone = parts.find(p => p.type === 'timeZoneName').value;
-
-      document.getElementById('timestamp').textContent =
-        `${day} ${month} ✹ ${time} (${timezone}) ✹ ABUJA (NG)`;
-    }
-
-    // Update timestamp immediately and then every second
-    updateTimestamp();
-    setInterval(updateTimestamp, 1000);
-
     // Handle navigation clicks
     document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
+      link.addEventListener('click', (e) => {
+        // Remove e.preventDefault() to allow navigation
         document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
         link.classList.add('active');
       });
@@ -140,11 +114,23 @@ style="background-image: url('/img/background.jpg'); background-size: cover; bac
       worksTray.classList.add('hidden');
       overlay.classList.remove('visible');
       overlay.classList.add('hidden');
+
+      // Restore the active page link dynamically
+      const currentPage = window.location.pathname; // Get the current page path
+      document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+
+      // Set the active link based on the current page
+      const activeLink = document.querySelector(`.nav-link[href="${currentPage}"]`);
+      if (activeLink) {
+        activeLink.classList.add('active');
+      }
     }
 
     // Open tray on "Works" link click
     worksLink.addEventListener('click', (event) => {
       event.preventDefault(); // Prevent default link behavior
+      document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+      worksLink.classList.add('active');
       openTray();
     });
 
