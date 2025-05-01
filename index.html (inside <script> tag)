@@ -1,0 +1,8 @@
+// Toggle the navigation tray
+const menuToggle = document.getElementById('menu-toggle');
+const navTray = document.getElementById('nav-tray');
+
+menuToggle.addEventListener('click', () => {
+  navTray.classList.toggle('hidden');
+  navTray.classList.toggle('visible');
+});

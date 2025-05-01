@@ -14,8 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap" rel="stylesheet" />
 </head>
 
-<body 
-style="background-image: url('/img/background.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;">
+<body>
   <main class="container">
     <div class="main-content">
       <div class="profile-section">
@@ -31,19 +30,16 @@ style="background-image: url('/img/background.jpg'); background-size: cover; bac
           build design systems and web interfaces.
         </h1>
         <h1>
-          In the last 8+ years, I've told unique stories, turned insights 🔭 into digital experiences & complex
-          experiences into profitable patterns 🧩.
+          In the last 8+ years, I've told unique stories, turned insights <span style="vertical-align: middle;"><img src="/img/Binoculars.svg"></span> into digital experiences & complex
+          experiences into profitable patterns <span style="vertical-align: middle;"><img src="/img/Chart.svg"></span>.
         </h1>
         <h1>
           Together with my unique skills and experiences as a designer/developer, I help early stage startups and
-          large-scale businesses craft 🎨 unique experiences and scale verticals.
+          large-scale businesses craft <span style="vertical-align: middle;"><img src="/img/Direction.svg"></span> unique experiences and scale verticals.
         </h1>
       </div>
     </div>
 
-    <!-- Overlay -->
-    <div id="overlay" class="overlay hidden"></div>
-    
     <!-- Tray for Works -->
     <div id="works-tray" class="tray hidden">
       <div class="tray-content">
@@ -104,26 +100,12 @@ style="background-image: url('/img/background.jpg'); background-size: cover; bac
     function openTray() {
       worksTray.classList.remove('hidden');
       worksTray.classList.add('visible');
-      overlay.classList.remove('hidden');
-      overlay.classList.add('visible');
     }
 
     // Function to close the tray
     function closeTray() {
       worksTray.classList.remove('visible');
       worksTray.classList.add('hidden');
-      overlay.classList.remove('visible');
-      overlay.classList.add('hidden');
-
-      // Restore the active page link dynamically
-      const currentPage = window.location.pathname; // Get the current page path
-      document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-
-      // Set the active link based on the current page
-      const activeLink = document.querySelector(`.nav-link[href="${currentPage}"]`);
-      if (activeLink) {
-        activeLink.classList.add('active');
-      }
     }
 
     // Open tray on "Works" link click
@@ -133,9 +115,6 @@ style="background-image: url('/img/background.jpg'); background-size: cover; bac
       worksLink.classList.add('active');
       openTray();
     });
-
-    // Close tray on overlay click
-    overlay.addEventListener('click', closeTray);
 
     // Close tray on Escape key press
     document.addEventListener('keydown', (event) => {
